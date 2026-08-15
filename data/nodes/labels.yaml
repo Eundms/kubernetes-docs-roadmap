@@ -1,0 +1,9 @@
+id: labels
+title:
+  ko: "레이블과 셀렉터"
+  en: "Labels and Selectors"
+url: https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/
+section: foundation
+requires:
+  - objects
+tags: [core]

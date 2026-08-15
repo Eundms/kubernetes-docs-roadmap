@@ -1,0 +1,9 @@
+id: cluster-architecture
+title:
+  ko: "클러스터 아키텍처"
+  en: "Cluster Architecture"
+url: https://kubernetes.io/docs/concepts/architecture/
+section: foundation
+requires:
+  - overview
+tags: [core]

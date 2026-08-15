@@ -1,0 +1,9 @@
+id: containers
+title:
+  ko: "컨테이너"
+  en: "Containers"
+url: https://kubernetes.io/docs/concepts/containers/
+section: workloads
+requires:
+  - objects
+tags: [core]

@@ -1,0 +1,10 @@
+id: objects
+title:
+  ko: "쿠버네티스 오브젝트"
+  en: "Objects In Kubernetes"
+url: https://kubernetes.io/docs/concepts/overview/working-with-objects/
+section: foundation
+spine: true
+requires:
+  - kubernetes-api
+tags: [core, api]

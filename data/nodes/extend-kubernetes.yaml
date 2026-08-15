@@ -1,0 +1,9 @@
+id: extend-kubernetes
+title:
+  ko: "쿠버네티스 확장"
+  en: "Extending Kubernetes"
+url: https://kubernetes.io/docs/concepts/extend-kubernetes/
+section: extending
+requires:
+  - controllers
+tags: [platform]

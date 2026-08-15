@@ -1,0 +1,19 @@
+{
+  "name": "kubernetes-docs-roadmap",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "validate": "tsx scripts/validate.ts",
+    "validate:print": "tsx scripts/validate.ts --print",
+    "l10n": "tsx scripts/fetch-l10n.ts",
+    "build": "npm run validate && tsx scripts/build.ts",
+    "check:links": "tsx scripts/check-links.ts",
+    "serve": "python3 -m http.server 8000 --directory dist"
+  },
+  "devDependencies": {
+    "ajv": "^8.17.1",
+    "ajv-formats": "^3.0.1",
+    "tsx": "^4.19.2",
+    "yaml": "^2.6.1"
+  }
+}

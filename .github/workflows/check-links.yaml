@@ -1,0 +1,63 @@
+name: Check links
+
+# upstream 문서는 계속 옮겨 다닌다. 주 1회 확인하고, 깨진 링크가 있으면
+# 이슈를 열어 메인테이너가 처리한다. PR 을 막지는 않는다.
+on:
+  schedule:
+    - cron: "0 19 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: "22", cache: npm }
+      - run: npm ci
+
+      - name: 링크 확인
+        id: check
+        # shell: bash 를 명시해야 pipefail 이 켜져 tee 너머의 실패가 전달된다.
+        shell: bash
+        run: npm run check:links 2>&1 | tee result.txt
+        continue-on-error: true
+
+      - name: 실패 시 이슈 열기 (이미 열려 있으면 코멘트)
+        if: steps.check.outcome == 'failure'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          {
+            echo "주간 링크 확인에서 문제가 발견되었습니다."
+            echo
+            echo '```'
+            tail -c 60000 result.txt
+            echo '```'
+            echo
+            echo "실행 로그: $RUN_URL"
+          } > body.md
+
+          # 라벨이 없으면 issue create 가 실패한다. 없을 때만 만든다.
+          gh label create broken-link --color d73a4a \
+            --description "노드 url 이 깨졌거나 이동함" 2>/dev/null || true
+
+          existing=$(gh issue list --state open --label broken-link \
+            --json number --jq '.[0].number')
+
+          if [ -n "$existing" ]; then
+            gh issue comment "$existing" --body-file body.md
+          else
+            gh issue create --title "깨진 링크 발견" \
+              --label broken-link --body-file body.md
+          fi
+
+      # 이슈까지 열었으면 잡 자체는 실패로 남겨 스케줄 결과가 초록으로 보이지 않게 한다.
+      - name: 결과 반영
+        if: steps.check.outcome == 'failure'
+        run: exit 1

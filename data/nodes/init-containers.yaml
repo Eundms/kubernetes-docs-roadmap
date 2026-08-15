@@ -1,0 +1,9 @@
+id: init-containers
+title:
+  ko: "초기화 컨테이너"
+  en: "Init Containers"
+url: https://kubernetes.io/docs/concepts/workloads/pods/init-containers/
+section: workloads
+requires:
+  - pod-lifecycle
+tags: [core]

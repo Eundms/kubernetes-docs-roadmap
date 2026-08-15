@@ -1,0 +1,9 @@
+id: annotations
+title:
+  ko: "어노테이션"
+  en: "Annotations"
+url: https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/
+section: foundation
+requires:
+  - objects
+tags: [core]

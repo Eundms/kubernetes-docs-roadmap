@@ -1,0 +1,11 @@
+id: kube-scheduler
+title:
+  ko: "쿠버네티스 스케줄러"
+  en: "Kubernetes Scheduler"
+url: https://kubernetes.io/docs/concepts/scheduling-eviction/kube-scheduler/
+section: scheduling
+spine: true
+requires:
+  - nodes
+  - pods
+tags: [scheduling]

@@ -1,0 +1,9 @@
+id: pod-security-standards
+title:
+  ko: "파드 시큐리티 표준"
+  en: "Pod Security Standards"
+url: https://kubernetes.io/docs/concepts/security/pod-security-standards/
+section: security
+requires:
+  - admission-controllers
+tags: [security]

@@ -1,0 +1,9 @@
+id: authentication
+title:
+  ko: "사용자 인증"
+  en: "Authenticating"
+url: https://kubernetes.io/docs/reference/access-authn-authz/authentication/
+section: security
+requires:
+  - security-overview
+tags: [security]

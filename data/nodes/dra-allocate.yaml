@@ -1,0 +1,9 @@
+id: dra-allocate
+title:
+  ko: "DRA로 워크로드에 디바이스 할당하기"
+  en: "Allocate Devices to Workloads with DRA"
+url: https://kubernetes.io/docs/tasks/configure-pod-container/assign-resources/allocate-devices-dra/
+section: ai
+requires:
+  - dra-setup
+tags: [ai, platform]

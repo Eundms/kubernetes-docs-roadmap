@@ -1,0 +1,10 @@
+id: topology-aware-scheduling
+title:
+  ko: "토폴로지 인지 워크로드 스케줄링"
+  en: "Topology-Aware Workload Scheduling"
+url: https://kubernetes.io/docs/concepts/scheduling-eviction/topology-aware-scheduling/
+section: ai
+requires:
+  - podgroup-scheduling
+  - topology-spread-constraints
+tags: [ai, scheduling]

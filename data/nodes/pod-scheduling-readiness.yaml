@@ -1,0 +1,9 @@
+id: pod-scheduling-readiness
+title:
+  ko: "파드 스케줄링 준비성(readiness)"
+  en: "Pod Scheduling Readiness"
+url: https://kubernetes.io/docs/concepts/scheduling-eviction/pod-scheduling-readiness/
+section: scheduling
+requires:
+  - kube-scheduler
+tags: [scheduling, ai]

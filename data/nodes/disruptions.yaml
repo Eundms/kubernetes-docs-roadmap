@@ -1,0 +1,9 @@
+id: disruptions
+title:
+  ko: "중단(disruption)"
+  en: "Disruptions"
+url: https://kubernetes.io/docs/concepts/workloads/pods/disruptions/
+section: workloads
+requires:
+  - workloads
+tags: [core, ai]

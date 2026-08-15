@@ -1,0 +1,9 @@
+id: images
+title:
+  ko: "컨테이너 이미지"
+  en: "Images"
+url: https://kubernetes.io/docs/concepts/containers/images/
+section: workloads
+requires:
+  - containers
+tags: [core]

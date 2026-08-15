@@ -1,0 +1,9 @@
+id: volume-snapshots
+title:
+  ko: "볼륨 스냅샷"
+  en: "Volume Snapshots"
+url: https://kubernetes.io/docs/concepts/storage/volume-snapshots/
+section: storage
+requires:
+  - storage-classes
+tags: [storage]

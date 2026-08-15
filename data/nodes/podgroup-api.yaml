@@ -1,0 +1,9 @@
+id: podgroup-api
+title:
+  ko: "파드그룹 API"
+  en: "PodGroup API"
+url: https://kubernetes.io/docs/concepts/workloads/podgroup-api/
+section: ai
+requires:
+  - workload-api
+tags: [ai, api]

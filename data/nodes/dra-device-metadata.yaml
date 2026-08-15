@@ -1,0 +1,9 @@
+id: dra-device-metadata
+title:
+  ko: "DRA 디바이스 메타데이터 접근"
+  en: "Access DRA Device Metadata"
+url: https://kubernetes.io/docs/tasks/configure-pod-container/assign-resources/access-dra-device-metadata/
+section: ai
+requires:
+  - dra-allocate
+tags: [ai, platform]

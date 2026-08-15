@@ -1,0 +1,10 @@
+id: scheduling-gpus
+title:
+  ko: "GPU 스케줄링"
+  en: "Schedule GPUs"
+url: https://kubernetes.io/docs/tasks/manage-gpus/scheduling-gpus/
+section: ai
+spine: true
+requires:
+  - device-plugins
+tags: [ai, scheduling]

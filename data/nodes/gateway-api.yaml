@@ -1,0 +1,9 @@
+id: gateway-api
+title:
+  ko: "게이트웨이 API"
+  en: "Gateway API"
+url: https://kubernetes.io/docs/concepts/services-networking/gateway/
+section: networking
+requires:
+  - ingress
+tags: [network]

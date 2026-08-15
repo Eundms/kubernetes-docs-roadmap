@@ -1,0 +1,9 @@
+id: topology-aware-workload-scheduling
+title:
+  ko: "토폴로지 인지 워크로드 스케줄링"
+  en: "Topology-Aware Workload Scheduling"
+url: https://kubernetes.io/docs/concepts/workloads/workload-api/topology-aware-scheduling/
+section: ai
+requires:
+  - topology-aware-scheduling
+tags: [ai, scheduling]

@@ -1,0 +1,9 @@
+id: statefulset
+title:
+  ko: "스테이트풀셋"
+  en: "StatefulSets"
+url: https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/
+section: workloads
+requires:
+  - workloads
+tags: [core]

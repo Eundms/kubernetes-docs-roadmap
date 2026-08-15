@@ -1,0 +1,9 @@
+id: resource-managers
+title:
+  ko: "리소스 관리자"
+  en: "Resource managers"
+url: https://kubernetes.io/docs/concepts/workloads/resource-managers/
+section: ai
+requires:
+  - resource-management
+tags: [ai, config]

@@ -1,0 +1,10 @@
+id: persistent-volumes
+title:
+  ko: "퍼시스턴트 볼륨"
+  en: "Persistent Volumes"
+url: https://kubernetes.io/docs/concepts/storage/persistent-volumes/
+section: storage
+spine: true
+requires:
+  - volumes
+tags: [storage]

@@ -1,0 +1,9 @@
+id: overview
+title:
+  ko: "쿠버네티스란 무엇인가?"
+  en: "What is Kubernetes?"
+url: https://kubernetes.io/docs/concepts/overview/
+section: foundation
+spine: true
+requires: []
+tags: [core]

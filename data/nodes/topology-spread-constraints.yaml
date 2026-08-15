@@ -1,0 +1,9 @@
+id: topology-spread-constraints
+title:
+  ko: "파드 토폴로지 분배 제약 조건"
+  en: "Pod Topology Spread Constraints"
+url: https://kubernetes.io/docs/concepts/scheduling-eviction/topology-spread-constraints/
+section: scheduling
+requires:
+  - assign-pod-node
+tags: [scheduling, ai]

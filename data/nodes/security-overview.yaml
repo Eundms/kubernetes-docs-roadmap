@@ -1,0 +1,10 @@
+id: security-overview
+title:
+  ko: "클라우드 네이티브 보안"
+  en: "Overview of Cloud Native Security"
+url: https://kubernetes.io/docs/concepts/security/
+section: security
+spine: true
+requires:
+  - pods
+tags: [security]

@@ -1,0 +1,10 @@
+id: resource-quotas
+title:
+  ko: "리소스 쿼터"
+  en: "Resource Quotas"
+url: https://kubernetes.io/docs/concepts/policy/resource-quotas/
+section: configuration
+requires:
+  - namespaces
+  - resource-management
+tags: [config, ai]

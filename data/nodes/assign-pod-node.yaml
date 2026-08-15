@@ -1,0 +1,10 @@
+id: assign-pod-node
+title:
+  ko: "노드에 파드 할당하기"
+  en: "Assigning Pods to Nodes"
+url: https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/
+section: scheduling
+requires:
+  - kube-scheduler
+  - labels
+tags: [scheduling]

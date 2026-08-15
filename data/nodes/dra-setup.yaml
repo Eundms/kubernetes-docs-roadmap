@@ -1,0 +1,9 @@
+id: dra-setup
+title:
+  ko: "클러스터에 DRA 설정하기"
+  en: "Set Up DRA in a Cluster"
+url: https://kubernetes.io/docs/tasks/configure-pod-container/assign-resources/set-up-dra-cluster/
+section: ai
+requires:
+  - dra
+tags: [ai, platform]

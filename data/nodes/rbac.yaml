@@ -1,0 +1,10 @@
+id: rbac
+title:
+  ko: "RBAC 인가"
+  en: "Using RBAC Authorization"
+url: https://kubernetes.io/docs/reference/access-authn-authz/rbac/
+section: security
+spine: true
+requires:
+  - authentication
+tags: [security]

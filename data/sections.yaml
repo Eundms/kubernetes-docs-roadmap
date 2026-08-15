@@ -1,0 +1,47 @@
+# 화면 위→아래 순서. 레벨이 아니라 주제 구획이다.
+# 순서 변경은 그래프 전체 배치를 바꾸므로 메인테이너 리뷰 대상.
+
+- id: foundation
+  title: { ko: 기초, en: Foundation }
+  lede: 클러스터가 무엇으로 이루어져 있고, 우리가 다루는 "오브젝트"란 무엇인지.
+  accent: "#326CE5"
+
+- id: workloads
+  title: { ko: 워크로드, en: Workloads }
+  lede: 애플리케이션을 실제로 띄우는 단위들. 파드에서 시작해 컨트롤러로 올라간다.
+  accent: "#2563EB"
+
+- id: configuration
+  title: { ko: 설정, en: Configuration }
+  lede: 이미지를 다시 굽지 않고 동작을 바꾸는 방법, 그리고 자원 한도.
+  accent: "#0891B2"
+
+- id: networking
+  title: { ko: 네트워킹, en: Networking }
+  lede: 파드에 어떻게 도달하는가. 클러스터 내부 이름 해석부터 외부 노출까지.
+  accent: "#7C3AED"
+
+- id: storage
+  title: { ko: 스토리지, en: Storage }
+  lede: 파드가 사라져도 남는 데이터. 요청과 공급의 분리가 핵심이다.
+  accent: "#0D9488"
+
+- id: scheduling
+  title: { ko: 스케줄링, en: Scheduling }
+  lede: 파드가 어느 노드에 배치되는가, 그리고 자원이 모자랄 때 누가 밀려나는가.
+  accent: "#059669"
+
+- id: security
+  title: { ko: 보안, en: Security }
+  lede: 누가 무엇을 할 수 있는가. 인증 → 인가 → 어드미션 순서로 통과한다.
+  accent: "#CA8A04"
+
+- id: extending
+  title: { ko: 확장, en: Extending Kubernetes }
+  lede: 쿠버네티스 API 자체를 늘리는 방법. 플랫폼을 만드는 쪽의 출발점.
+  accent: "#E11D48"
+
+- id: ai
+  title: { ko: AI/ML 워크로드, en: AI/ML Workloads }
+  lede: 가속기를 파드에 붙이는 법, 그리고 여러 파드를 한 덩어리로 스케줄링하는 법. 분산 학습이 일반 워크로드와 갈라지는 지점이다.
+  accent: "#EA580C"

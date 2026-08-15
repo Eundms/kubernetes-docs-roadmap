@@ -1,0 +1,11 @@
+id: topology-manager
+title:
+  ko: "노드의 토폴로지 관리 정책 제어"
+  en: "Control Topology Management Policies on a node"
+url: https://kubernetes.io/docs/tasks/administer-cluster/topology-manager/
+section: ai
+requires:
+  - device-plugins
+  - cpu-management-policies
+  - memory-manager
+tags: [ai, config]

@@ -1,0 +1,9 @@
+id: cronjob
+title:
+  ko: "크론잡"
+  en: "CronJob"
+url: https://kubernetes.io/docs/concepts/workloads/controllers/cron-jobs/
+section: workloads
+requires:
+  - job
+tags: [core]

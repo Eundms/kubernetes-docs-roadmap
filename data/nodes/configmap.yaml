@@ -1,0 +1,10 @@
+id: configmap
+title:
+  ko: "컨피그맵"
+  en: "ConfigMaps"
+url: https://kubernetes.io/docs/concepts/configuration/configmap/
+section: configuration
+spine: true
+requires:
+  - pods
+tags: [config]

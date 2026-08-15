@@ -1,0 +1,9 @@
+id: podgroup-scheduling
+title:
+  ko: "파드그룹 스케줄링"
+  en: "PodGroup Scheduling"
+url: https://kubernetes.io/docs/concepts/scheduling-eviction/podgroup-scheduling/
+section: ai
+requires:
+  - podgroup-api
+tags: [ai, scheduling]

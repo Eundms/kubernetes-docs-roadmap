@@ -1,0 +1,9 @@
+id: ingress
+title:
+  ko: "인그레스"
+  en: "Ingress"
+url: https://kubernetes.io/docs/concepts/services-networking/ingress/
+section: networking
+requires:
+  - service
+tags: [network]

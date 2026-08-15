@@ -1,0 +1,10 @@
+id: pod-failure-policy
+title:
+  ko: "파드 실패 정책으로 재시도 가능/불가능한 파드 실패 처리하기"
+  en: "Handling retriable and non-retriable pod failures with Pod failure policy"
+url: https://kubernetes.io/docs/tasks/job/pod-failure-policy/
+section: workloads
+requires:
+  - job
+  - pod-lifecycle
+tags: [core, ai]

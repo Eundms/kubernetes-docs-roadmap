@@ -1,0 +1,10 @@
+id: device-plugins
+title:
+  ko: "디바이스 플러그인"
+  en: "Device Plugins"
+url: https://kubernetes.io/docs/concepts/extend-kubernetes/compute-storage-net/device-plugins/
+section: extending
+requires:
+  - daemonset
+  - extend-kubernetes
+tags: [platform, ai]

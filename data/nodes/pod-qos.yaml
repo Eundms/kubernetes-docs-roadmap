@@ -1,0 +1,9 @@
+id: pod-qos
+title:
+  ko: "파드 서비스 품질(QoS) 클래스"
+  en: "Pod Quality of Service Classes"
+url: https://kubernetes.io/docs/concepts/workloads/pods/pod-qos/
+section: configuration
+requires:
+  - resource-management
+tags: [config, ai]

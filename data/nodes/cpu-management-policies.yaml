@@ -1,0 +1,10 @@
+id: cpu-management-policies
+title:
+  ko: "노드의 CPU 관리 정책 제어"
+  en: "Control CPU Management Policies on the Node"
+url: https://kubernetes.io/docs/tasks/administer-cluster/cpu-management-policies/
+section: ai
+requires:
+  - resource-managers
+  - pod-qos
+tags: [ai, config]

@@ -1,0 +1,10 @@
+id: pod-priority
+title:
+  ko: "파드 우선순위와 선점"
+  en: "Pod Priority and Preemption"
+url: https://kubernetes.io/docs/concepts/scheduling-eviction/pod-priority-preemption/
+section: scheduling
+requires:
+  - kube-scheduler
+  - resource-management
+tags: [scheduling]

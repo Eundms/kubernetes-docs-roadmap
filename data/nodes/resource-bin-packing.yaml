@@ -1,0 +1,9 @@
+id: resource-bin-packing
+title:
+  ko: "리소스 빈 패킹(bin packing)"
+  en: "Resource Bin Packing"
+url: https://kubernetes.io/docs/concepts/scheduling-eviction/resource-bin-packing/
+section: scheduling
+requires:
+  - kube-scheduler
+tags: [scheduling, ai]

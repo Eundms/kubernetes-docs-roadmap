@@ -1,0 +1,9 @@
+id: pod-lifecycle
+title:
+  ko: "파드 라이프사이클"
+  en: "Pod Lifecycle"
+url: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/
+section: workloads
+requires:
+  - pods
+tags: [core]

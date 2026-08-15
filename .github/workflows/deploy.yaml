@@ -1,0 +1,51 @@
+name: Build and deploy
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    # 번역 상태를 매일 갱신한다. upstream 이 계속 움직이므로 데이터가 아니라 시점의 문제다.
+    - cron: "0 18 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: "22", cache: npm }
+      - run: npm ci
+
+      # kubernetes/website 는 크다. blobless clone 이라도 매번 받으면 낭비이므로
+      # 캐시하고, 이후에는 fetch 로 증분 갱신만 한다.
+      - uses: actions/cache@v4
+        with:
+          path: .cache/website
+          key: website-${{ github.run_id }}
+          restore-keys: website-
+
+      - run: npm run l10n
+      - run: npm run build
+
+      - uses: actions/upload-pages-artifact@v3
+        with: { path: dist }
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

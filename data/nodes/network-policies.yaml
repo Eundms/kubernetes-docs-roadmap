@@ -1,0 +1,9 @@
+id: network-policies
+title:
+  ko: "네트워크 폴리시"
+  en: "Network Policies"
+url: https://kubernetes.io/docs/concepts/services-networking/network-policies/
+section: networking
+requires:
+  - service
+tags: [network, security]

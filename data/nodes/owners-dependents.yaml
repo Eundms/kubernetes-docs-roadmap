@@ -1,0 +1,9 @@
+id: owners-dependents
+title:
+  ko: "오너와 디펜던트"
+  en: "Owners and Dependents"
+url: https://kubernetes.io/docs/concepts/overview/working-with-objects/owners-dependents/
+section: foundation
+requires:
+  - objects
+tags: [core]

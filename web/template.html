@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kubernetes Docs Roadmap — 읽는 순서와 한국어 번역 현황</title>
+<meta name="description" content="kubernetes.io 공식 문서를 선수 지식 순서로 연결한 학습 경로. 각 문서의 한국어 번역 현황을 함께 표시합니다.">
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#EEF1F6; --grid:#DDE3EC; --ink:#10141A; --ink-2:#5A6472; --card:#fff;
+  --done:#16A34A; --stale:#F97316; --none:#B4BECC; --unknown:#D8DEE7;
+  --mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  --sans:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);
+  background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+  background-size:26px 26px;-webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:1180px;margin:0 auto;padding:0 22px}
+
+/* header */
+.masthead{padding:52px 0 8px}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-2);margin:0 0 15px;display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.eyebrow b{color:#326CE5;font-weight:700}
+h1{font-size:clamp(30px,5vw,47px);line-height:1.1;letter-spacing:-.03em;font-weight:800;margin:0 0 15px;max-width:17ch}
+h1 em{font-style:normal;color:#326CE5}
+.lede{font-size:15px;line-height:1.72;color:var(--ink-2);max-width:57ch;margin:0}
+
+/* coverage */
+.cov{margin-top:30px;background:var(--card);border:1.5px solid var(--ink);border-radius:8px;padding:18px 20px;box-shadow:3px 3px 0 rgba(16,20,26,.1)}
+.cov-top{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:13px}
+.cov-top .k{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2)}
+.cov-top .v{font-family:var(--mono);font-size:31px;font-weight:700;letter-spacing:-.03em;line-height:1}
+.cov-top .src{margin-left:auto;font-family:var(--mono);font-size:10px;color:var(--ink-2);text-align:right;line-height:1.5}
+.cov-top .src a{color:var(--ink-2)}
+.cov-bar{height:9px;border-radius:99px;overflow:hidden;display:flex;background:#E3E8F0}
+.cov-bar i{height:100%}
+.cov-key{display:flex;gap:18px;flex-wrap:wrap;margin-top:11px;font-family:var(--mono);font-size:11px;color:var(--ink-2)}
+.cov-key span{display:flex;gap:6px;align-items:center}
+.dot{width:9px;height:9px;border-radius:2px}
+
+/* controls */
+.controls{display:flex;gap:18px;flex-wrap:wrap;align-items:center;margin-top:26px}
+.clabel{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2)}
+.chip{font-family:var(--mono);font-size:11px;border:1.5px solid var(--ink);background:var(--card);color:var(--ink);padding:5px 11px;border-radius:99px;cursor:pointer;transition:.13s}
+.chip:hover{transform:translateY(-1px)}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.chip:focus-visible{outline:2.5px solid #326CE5;outline-offset:2px}
+
+/* graph */
+.graph{position:relative;margin:38px 0 90px}
+#wires{position:absolute;inset:0;width:100%;pointer-events:none;z-index:0;overflow:visible}
+#wires path{fill:none}
+.w-spine{stroke:var(--ac,#326CE5);stroke-width:3;stroke-linecap:round}
+.w-branch{stroke:#9AA7B8;stroke-width:1.8;stroke-dasharray:2 6;stroke-linecap:round}
+.w-trace{stroke:#E11D48;stroke-width:2.4;stroke-dasharray:7 5}
+
+.band{position:relative;z-index:1;margin:56px 0 30px}
+.band:first-of-type{margin-top:0}
+.band h2{font-size:24px;font-weight:800;letter-spacing:-.025em;margin:0 0 5px;display:flex;align-items:center;gap:11px}
+.band h2::before{content:"";width:11px;height:11px;border-radius:3px;background:var(--ac)}
+.band h2 small{font-family:var(--mono);font-size:11px;font-weight:400;color:var(--ink-2);letter-spacing:0}
+.band p{font-size:13.5px;color:var(--ink-2);margin:0;max-width:62ch;line-height:1.65;padding-left:22px}
+.band .rule{display:block;height:1.5px;background:var(--ac);opacity:.28;margin-top:14px}
+
+.row{position:relative;z-index:1;display:grid;grid-template-columns:1fr 260px 1fr;gap:26px;align-items:center;margin-bottom:22px}
+.slot{display:flex;flex-direction:column;gap:8px}
+.slot.left{align-items:flex-end}
+.cluster{display:flex;flex-direction:column;gap:8px;max-width:340px;width:100%}
+
+/* node */
+.node{position:relative;display:flex;background:var(--card);border:1.5px solid var(--ink);border-radius:6px;
+  box-shadow:2.5px 2.5px 0 rgba(16,20,26,.1);cursor:pointer;font-family:inherit;color:inherit;text-align:left;
+  padding:0;overflow:hidden;width:100%;transition:transform .12s,box-shadow .12s,opacity .18s}
+.node:hover{transform:translate(-1.5px,-1.5px);box-shadow:4.5px 4.5px 0 rgba(16,20,26,.16)}
+.node:focus-visible{outline:2.5px solid #326CE5;outline-offset:2px}
+.node .rail{width:6px;flex:0 0 6px;background:var(--rail)}
+.node[data-l10n="none"] .rail{background:repeating-linear-gradient(45deg,var(--none) 0 3px,#E7ECF3 3px 6px)}
+.node .body{flex:1;padding:9px 12px;min-width:0}
+.node .t{font-size:14px;font-weight:600;letter-spacing:-.01em;line-height:1.32}
+.node .sub{font-family:var(--mono);font-size:10px;color:var(--ink-2);margin-top:3px}
+.node.hub{border-width:2px;box-shadow:3px 3px 0 rgba(16,20,26,.16)}
+.node.hub .body{background:color-mix(in srgb,var(--ac) 9%,#fff);padding:12px}
+.node.hub .t{font-size:15.5px;font-weight:700}
+.node.dim{opacity:.18;filter:saturate(.15)}
+.node.trace{border-color:#E11D48;box-shadow:0 0 0 3px rgba(225,29,72,.16),2.5px 2.5px 0 rgba(16,20,26,.1)}
+.node.focus{border-color:#E11D48;border-width:2px;box-shadow:0 0 0 5px rgba(225,29,72,.2)}
+
+/* inspector */
+.insp{position:fixed;right:18px;bottom:18px;width:min(348px,calc(100vw - 36px));z-index:50;background:var(--card);
+  border:2px solid var(--ink);border-radius:9px;box-shadow:6px 6px 0 rgba(16,20,26,.22);padding:17px 18px;
+  transform:translateY(150%);transition:transform .22s cubic-bezier(.2,.8,.3,1)}
+.insp[data-open="1"]{transform:none}
+.insp .x{position:absolute;top:9px;right:10px;border:0;background:none;cursor:pointer;font-family:var(--mono);font-size:14px;color:var(--ink-2);padding:4px}
+.insp .k{font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase}
+.insp h4{margin:6px 0 3px;font-size:17.5px;font-weight:800;letter-spacing:-.02em;padding-right:24px}
+.insp .en{font-family:var(--mono);font-size:11px;color:var(--ink-2);margin-bottom:13px}
+.insp .facts{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px}
+.fact{font-family:var(--mono);font-size:10px;border:1.5px solid #D3DAE4;border-radius:4px;padding:3px 7px}
+.insp .sec{margin-bottom:13px}
+.insp .sec>span{font-family:var(--mono);font-size:9.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--ink-2);display:block;margin-bottom:6px}
+.pills{display:flex;flex-wrap:wrap;gap:5px}
+.pill{font-size:11.5px;background:#EDF1F7;border-radius:99px;padding:3.5px 10px;font-weight:500;cursor:pointer;border:0;font-family:inherit}
+.pill:hover{background:#DDE4EE}
+.pill.up{background:rgba(225,29,72,.1);color:#9F1239}
+.insp .links{display:flex;gap:7px}
+.insp .go{flex:1;text-align:center;background:var(--ink);color:var(--paper);border-radius:5px;padding:10px;
+  text-decoration:none;font-family:var(--mono);font-size:11.5px}
+.insp .go:hover{background:#326CE5}
+.insp .go.ko{background:var(--done)}
+.insp .go.ko:hover{background:#15803D}
+
+footer{padding:0 0 72px;font-size:12.5px;line-height:1.85;color:var(--ink-2)}
+footer a{color:#326CE5}
+
+@media (max-width:900px){
+  .row{grid-template-columns:1fr;gap:8px;margin-bottom:14px}
+  .slot.left,.slot.right{align-items:stretch;padding-left:20px;border-left:2px dotted #A9B4C4;margin-left:13px}
+  .cluster{max-width:none}
+  #wires{display:none}
+  .insp{left:12px;right:12px;bottom:12px;width:auto}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="masthead">
+    <p class="eyebrow"><b>Kubernetes Docs Roadmap</b><span>·</span><span id="stat">—</span></p>
+    <h1>공식 문서를 <em>순서대로</em> 읽는 법.</h1>
+    <p class="lede">
+      kubernetes.io 문서만으로 구성한 선수 지식 그래프입니다. 화살표는 "이걸 모르면 저 문서를 읽을 수 없다"는 뜻입니다.
+      카드를 누르면 선수 지식 경로가 그려지고, 왼쪽 색 막대는 그 문서의 한국어 번역 현황을 나타냅니다.
+    </p>
+  </header>
+
+  <section class="cov">
+    <div class="cov-top">
+      <div>
+        <div class="k">한국어 번역 커버리지</div>
+        <div class="v" id="cov-v">—</div>
+      </div>
+      <div class="src" id="cov-src"></div>
+    </div>
+    <div class="cov-bar" id="cov-bar"></div>
+    <div class="cov-key">
+      <span><i class="dot" style="background:var(--done)"></i> 번역 완료</span>
+      <span><i class="dot" style="background:var(--stale)"></i> 원문보다 오래됨</span>
+      <span><i class="dot" style="background:repeating-linear-gradient(45deg,var(--none) 0 3px,#E7ECF3 3px 6px)"></i> 미번역</span>
+      <span id="key-unknown" hidden><i class="dot" style="background:var(--unknown)"></i> 미확인</span>
+    </div>
+  </section>
+
+  <nav class="controls">
+    <span class="clabel">보기</span>
+    <div id="chips" style="display:flex;gap:7px;flex-wrap:wrap"></div>
+  </nav>
+
+  <main class="graph" id="graph">
+    <svg id="wires" aria-hidden="true"><g id="g-branch"></g><g id="g-spine"></g><g id="g-trace"></g></svg>
+  </main>
+
+  <footer>
+    <p>
+      번역 상태는 <a href="https://github.com/kubernetes/website" target="_blank" rel="noopener">kubernetes/website</a>
+      저장소에서 <code>content/ko</code> 파일의 존재 여부와, 원문 대비 마지막 커밋 시각을 비교해 빌드 시점에 계산합니다.
+      "원문보다 오래됨"은 kubernetes.io 한국어 페이지 상단 배너와 같은 신호입니다.
+    </p>
+    <p>
+      <a href="https://kubernetes.io/ko/docs/home/" target="_blank" rel="noopener">한국어 문서</a> ·
+      <a href="https://kubernetes.io/docs/contribute/localization/" target="_blank" rel="noopener">Localizing Kubernetes docs</a> ·
+      <a href="https://kubernetes.io/docs/contribute/" target="_blank" rel="noopener">Contribute to K8s docs</a>
+    </p>
+  </footer>
+</div>
+
+<aside class="insp" id="insp" data-open="0" aria-live="polite">
+  <button class="x" id="insp-x" aria-label="닫기">✕</button>
+  <div class="k" id="i-sec">—</div>
+  <h4 id="i-title">—</h4>
+  <div class="en" id="i-en">—</div>
+  <div class="facts" id="i-facts"></div>
+  <div class="sec" id="i-up-w"><span>선수 지식 — 먼저 읽어야 합니다</span><div class="pills" id="i-up"></div></div>
+  <div class="sec" id="i-down-w"><span>이걸 알아야 열립니다</span><div class="pills" id="i-down"></div></div>
+  <div class="links">
+    <a class="go" id="i-en-link" href="#" target="_blank" rel="noopener">영문 ↗</a>
+    <a class="go ko" id="i-ko-link" href="#" target="_blank" rel="noopener">한국어 ↗</a>
+  </div>
+</aside>
+
+<script>
+const G = /*__GRAPH__*/null;
+
+const RAIL = {done:"var(--done)", stale:"var(--stale)", none:"var(--none)", unknown:"var(--unknown)"};
+const L10N_LABEL = {done:"번역 완료", stale:"원문보다 오래됨", none:"미번역", unknown:"미확인"};
+const lagText = d => d==null ? "" : d>=365 ? `약 ${Math.round(d/365*10)/10}년 뒤처짐`
+  : d>=30 ? `약 ${Math.round(d/30)}개월 뒤처짐` : "최신";
+const els = new Map();
+const state = {tags:new Set(), untranslated:false, focus:null};
+
+const N = id => G.nodes[id];
+const ancestorsOf = id => { const s=new Set(), q=[...N(id).requires];
+  while(q.length){ const v=q.pop(); if(s.has(v))continue; s.add(v); q.push(...N(v).requires); } return s; };
+
+/* ---------- coverage ---------- */
+(function coverage(){
+  const c = G.coverage, T = c.total;
+  document.getElementById("cov-v").innerHTML =
+    Math.round(c.done/T*100) + '<span style="font-size:14px;color:var(--ink-2);font-weight:400">% · '+c.done+'/'+T+' 문서</span>';
+  document.getElementById("cov-bar").innerHTML =
+    ["done","stale","none","unknown"].map(k=>`<i style="background:${k==="none"
+      ?"repeating-linear-gradient(45deg,var(--none) 0 3px,#E7ECF3 3px 6px)":RAIL[k]};width:${c[k]/T*100}%"></i>`).join("");
+  if(c.unknown) document.getElementById("key-unknown").hidden = false;
+  const src = document.getElementById("cov-src");
+  src.innerHTML = G.l10nSource
+    ? `kubernetes/website<br>${G.l10nSource.upstreamCommit.slice(0,7)} · ${G.l10nSource.generatedAt.slice(0,10)} 기준`
+    : `번역 상태 미확인<br>fetch-l10n 미실행`;
+  document.getElementById("stat").textContent =
+    `${T} docs · ${Object.values(G.nodes).reduce((s,n)=>s+n.requires.length,0)} edges`;
+})();
+
+/* ---------- build ---------- */
+const graph = document.getElementById("graph");
+const secById = Object.fromEntries(G.sections.map(s=>[s.id,s]));
+
+function nodeEl(id, hub, accent){
+  const n = N(id);
+  const b = document.createElement("button");
+  b.className = "node" + (hub?" hub":"");
+  b.dataset.id = id; b.dataset.l10n = n.l10n;
+  b.style.setProperty("--rail", RAIL[n.l10n]);
+  b.style.setProperty("--ac", accent);
+  b.setAttribute("aria-label", `${n.title.ko} — ${L10N_LABEL[n.l10n]}${n.l10n==="stale"?", "+lagText(n.lagDays):""}`);
+  b.innerHTML = `<span class="rail"></span><span class="body">
+      <span class="t">${n.title.ko}</span><span class="sub">${n.title.en}</span></span>`;
+  b.addEventListener("click", ()=>select(id));
+  els.set(id, b);
+  return b;
+}
+
+G.layout.forEach(({section, rows})=>{
+  const sec = secById[section];
+  const band = document.createElement("section");
+  band.className = "band"; band.style.setProperty("--ac", sec.accent);
+  band.innerHTML = `<h2>${sec.title.ko} <small>${sec.title.en}</small></h2>
+    <p>${sec.lede}</p><span class="rule"></span>`;
+  graph.appendChild(band);
+
+  rows.forEach(row=>{
+    const r = document.createElement("div"); r.className="row";
+    r.dataset.accent = sec.accent;
+    const slot = (cls, ids, hub)=>{
+      const s = document.createElement("div"); s.className = "slot "+cls;
+      if(ids.length){
+        const c = document.createElement("div"); c.className="cluster";
+        ids.forEach(id=>c.appendChild(nodeEl(id, hub, sec.accent)));
+        s.appendChild(c);
+      }
+      return s;
+    };
+    r.appendChild(slot("left", row.left, false));
+    r.appendChild(slot("mid", [row.spine], true));
+    r.appendChild(slot("right", row.right, false));
+    r.dataset.spine = row.spine;
+    r.dataset.left = row.left.join(",");
+    r.dataset.right = row.right.join(",");
+    graph.appendChild(r);
+  });
+});
+
+/* ---------- wires ---------- */
+const wires = document.getElementById("wires");
+const box = el => { const g=graph.getBoundingClientRect(), r=el.getBoundingClientRect();
+  return {x:r.left-g.left, y:r.top-g.top, w:r.width, h:r.height, cx:r.left-g.left+r.width/2, cy:r.top-g.top+r.height/2}; };
+const P = (d,cls,ac) => { const p=document.createElementNS("http://www.w3.org/2000/svg","path");
+  p.setAttribute("d",d); p.setAttribute("class",cls); if(ac) p.style.setProperty("--ac",ac); return p; };
+
+function drawWires(){
+  const gs=document.getElementById("g-spine"), gb=document.getElementById("g-branch");
+  gs.innerHTML=""; gb.innerHTML="";
+  if(innerWidth<=900) return;
+  wires.setAttribute("height", graph.scrollHeight);
+
+  let prev=null, prevAc=null;
+  graph.querySelectorAll(".row").forEach(row=>{
+    const hub = els.get(row.dataset.spine); if(!hub) return;
+    const hb = box(hub), ac = row.dataset.accent;
+    if(prev) gs.appendChild(P(`M ${prev.cx} ${prev.y+prev.h} L ${hb.cx} ${hb.y}`,"w-spine",prevAc));
+    prev = hb; prevAc = ac;
+
+    [["left",-1],["right",1]].forEach(([side,dir])=>{
+      const sx = side==="left" ? hb.x : hb.x+hb.w;
+      row.dataset[side].split(",").filter(Boolean).forEach(id=>{
+        const e = els.get(id); if(!e) return;
+        const cb = box(e);
+        const tx = side==="left" ? cb.x+cb.w : cb.x;
+        const mx = sx + dir*22;
+        gb.appendChild(P(`M ${sx} ${hb.cy} L ${mx} ${hb.cy} C ${mx+dir*20} ${hb.cy}, ${tx-dir*24} ${cb.cy}, ${tx} ${cb.cy}`,"w-branch"));
+      });
+    });
+  });
+}
+
+function drawTrace(id){
+  const gt = document.getElementById("g-trace"); gt.innerHTML="";
+  if(!id || innerWidth<=900) return;
+  const anc = ancestorsOf(id), seen = new Set();
+  const walk = to => {
+    N(to).requires.forEach(from=>{
+      const key = from+">"+to; if(seen.has(key)) return; seen.add(key);
+      const a=els.get(from), b=els.get(to); if(!a||!b) return;
+      const A=box(a), B=box(b), dy=Math.max(30, Math.abs(B.y-A.y)*.35);
+      gt.appendChild(P(`M ${A.cx} ${A.cy} C ${A.cx} ${A.cy+dy}, ${B.cx} ${B.cy-dy}, ${B.cx} ${B.cy}`,"w-trace"));
+      if(anc.has(from)) walk(from);
+    });
+  };
+  walk(id);
+}
+
+/* ---------- interaction ---------- */
+const insp = document.getElementById("insp");
+function select(id){
+  state.focus = state.focus===id ? null : id;
+  applyFilters(); drawTrace(state.focus);
+  if(!state.focus){ insp.dataset.open="0"; return; }
+  const n = N(id), sec = secById[n.section];
+  insp.dataset.open = "1";
+  const st = document.getElementById("i-sec");
+  st.textContent = sec.title.ko; st.style.color = sec.accent;
+  document.getElementById("i-title").textContent = n.title.ko;
+  document.getElementById("i-en").textContent = n.title.en;
+  document.getElementById("i-facts").innerHTML =
+    `<span class="fact" style="border-color:${RAIL[n.l10n]}">🇰🇷 ${L10N_LABEL[n.l10n]}` +
+      (n.l10n==="stale" ? ` · ${lagText(n.lagDays)}` : "") + `</span>` +
+    n.tags.map(t=>`<span class="fact">${t}</span>`).join("");
+  const pills = (ids,cls) => ids.length
+    ? ids.map(i=>`<button class="pill ${cls}" data-goto="${i}">${N(i).title.ko}</button>`).join("")
+    : `<span class="pill" style="cursor:default">없음 — 바로 시작할 수 있습니다</span>`;
+  document.getElementById("i-up").innerHTML = pills(n.requires,"up");
+  document.getElementById("i-down-w").style.display = n.unlocks.length ? "" : "none";
+  document.getElementById("i-down").innerHTML = pills(n.unlocks,"");
+  document.getElementById("i-en-link").href = n.url;
+  const ko = document.getElementById("i-ko-link");
+  if(n.koUrl){ ko.href = n.koUrl; ko.style.display=""; ko.textContent = n.l10n==="stale" ? "한국어 (구버전) ↗" : "한국어 ↗"; }
+  else ko.style.display = "none";
+}
+insp.addEventListener("click", e=>{
+  const t = e.target.closest("[data-goto]");
+  if(!t) return;
+  select(t.dataset.goto);
+  els.get(t.dataset.goto)?.scrollIntoView({block:"center", behavior:"smooth"});
+});
+document.getElementById("insp-x").addEventListener("click", ()=>{
+  state.focus=null; insp.dataset.open="0"; applyFilters(); drawTrace(null);
+});
+addEventListener("keydown", e=>{ if(e.key==="Escape" && state.focus){
+  state.focus=null; insp.dataset.open="0"; applyFilters(); drawTrace(null); }});
+
+function applyFilters(){
+  const anc = state.focus ? ancestorsOf(state.focus) : null;
+  els.forEach((e,id)=>{
+    const n = N(id); let ok = true;
+    if(state.tags.size && !n.tags.some(t=>state.tags.has(t))) ok = false;
+    if(state.untranslated && n.l10n === "done") ok = false;
+    e.classList.remove("trace","focus");
+    if(state.focus){
+      if(id === state.focus){ e.classList.add("focus"); ok = true; }
+      else if(anc.has(id)){ e.classList.add("trace"); ok = true; }
+      else ok = false;
+    }
+    e.classList.toggle("dim", !ok);
+  });
+}
+
+/* ---------- chips ---------- */
+(function chips(){
+  const wrap = document.getElementById("chips");
+  const tags = [...new Set(Object.values(G.nodes).flatMap(n=>n.tags))].sort();
+  const mk = (label, on, off) => {
+    const b = document.createElement("button");
+    b.className="chip"; b.textContent=label; b.setAttribute("aria-pressed","false");
+    b.addEventListener("click", ()=>{
+      const next = b.getAttribute("aria-pressed")!=="true";
+      b.setAttribute("aria-pressed", String(next));
+      next ? on() : off();
+      state.focus=null; insp.dataset.open="0"; drawTrace(null); applyFilters();
+    });
+    wrap.appendChild(b);
+    return b;
+  };
+  mk("아직 번역 안 된 것만", ()=>state.untranslated=true, ()=>state.untranslated=false);
+  tags.forEach(t => mk(t, ()=>state.tags.add(t), ()=>state.tags.delete(t)));
+})();
+
+/* ---------- boot ---------- */
+requestAnimationFrame(()=>requestAnimationFrame(drawWires));
+if(document.fonts?.ready) document.fonts.ready.then(drawWires);
+let tm; addEventListener("resize", ()=>{ clearTimeout(tm);
+  tm = setTimeout(()=>{ drawWires(); drawTrace(state.focus); }, 120); });
+</script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+id: deployment
+title:
+  ko: "디플로이먼트"
+  en: "Deployments"
+url: https://kubernetes.io/docs/concepts/workloads/controllers/deployment/
+section: workloads
+requires:
+  - replicaset
+tags: [core]

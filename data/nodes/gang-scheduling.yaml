@@ -1,0 +1,10 @@
+id: gang-scheduling
+title:
+  ko: "갱 스케줄링"
+  en: "Gang Scheduling"
+url: https://kubernetes.io/docs/concepts/scheduling-eviction/gang-scheduling/
+section: ai
+requires:
+  - podgroup-scheduling
+  - scheduling-group
+tags: [ai, scheduling]

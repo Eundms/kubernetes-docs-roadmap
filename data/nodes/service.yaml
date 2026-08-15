@@ -1,0 +1,11 @@
+id: service
+title:
+  ko: "서비스"
+  en: "Service"
+url: https://kubernetes.io/docs/concepts/services-networking/service/
+section: networking
+spine: true
+requires:
+  - cluster-networking
+  - labels
+tags: [network]

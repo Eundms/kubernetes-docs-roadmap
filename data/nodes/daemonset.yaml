@@ -1,0 +1,9 @@
+id: daemonset
+title:
+  ko: "데몬셋"
+  en: "DaemonSet"
+url: https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/
+section: workloads
+requires:
+  - workloads
+tags: [core]

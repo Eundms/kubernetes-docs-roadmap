@@ -1,0 +1,10 @@
+id: workload-aware-preemption
+title:
+  ko: "워크로드 인지 선점"
+  en: "Workload-Aware Preemption"
+url: https://kubernetes.io/docs/concepts/scheduling-eviction/workload-aware-preemption/
+section: ai
+requires:
+  - gang-scheduling
+  - pod-priority
+tags: [ai, scheduling]

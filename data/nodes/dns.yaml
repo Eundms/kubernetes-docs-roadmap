@@ -1,0 +1,9 @@
+id: dns
+title:
+  ko: "서비스와 파드를 위한 DNS"
+  en: "DNS for Services and Pods"
+url: https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/
+section: networking
+requires:
+  - service
+tags: [network]

@@ -1,0 +1,9 @@
+id: nodes
+title:
+  ko: "노드"
+  en: "Nodes"
+url: https://kubernetes.io/docs/concepts/architecture/nodes/
+section: foundation
+requires:
+  - cluster-architecture
+tags: [core]

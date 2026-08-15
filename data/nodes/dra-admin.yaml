@@ -1,0 +1,9 @@
+id: dra-admin
+title:
+  ko: "클러스터 관리자를 위한 동적 리소스 할당 모범 사례"
+  en: "Good practices for Dynamic Resource Allocation as a Cluster Admin"
+url: https://kubernetes.io/docs/concepts/cluster-administration/dra/
+section: ai
+requires:
+  - dra-setup
+tags: [ai, platform]

@@ -1,0 +1,9 @@
+id: namespaces
+title:
+  ko: "네임스페이스"
+  en: "Namespaces"
+url: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/
+section: foundation
+requires:
+  - objects
+tags: [core]

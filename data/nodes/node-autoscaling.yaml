@@ -1,0 +1,9 @@
+id: node-autoscaling
+title:
+  ko: "노드 오토스케일링"
+  en: "Node Autoscaling"
+url: https://kubernetes.io/docs/concepts/cluster-administration/node-autoscaling/
+section: scheduling
+requires:
+  - kube-scheduler
+tags: [scheduling, ai]

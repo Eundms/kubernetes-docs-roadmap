@@ -1,0 +1,9 @@
+id: podgroup-policies
+title:
+  ko: "파드그룹 스케줄링 정책"
+  en: "PodGroup Scheduling Policies"
+url: https://kubernetes.io/docs/concepts/workloads/workload-api/policies/
+section: ai
+requires:
+  - podgroup-api
+tags: [ai, scheduling]

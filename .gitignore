@@ -1,0 +1,12 @@
+node_modules/
+
+# kubernetes/website 클론. 886MB 다. CI 는 actions/cache 로 따로 관리한다.
+.cache/
+
+# Actions 가 매번 빌드하므로 커밋하지 않는다.
+dist/
+
+# l10n.json 은 매일 스케줄로 다시 만들어진다. 커밋하면 충돌만 난다.
+data/generated/
+
+.DS_Store

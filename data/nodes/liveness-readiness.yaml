@@ -1,0 +1,9 @@
+id: liveness-readiness
+title:
+  ko: "활성·준비성·시작 프로브"
+  en: "Liveness, Readiness, and Startup Probes"
+url: https://kubernetes.io/docs/concepts/workloads/pods/probes/
+section: configuration
+requires:
+  - pod-lifecycle
+tags: [config]

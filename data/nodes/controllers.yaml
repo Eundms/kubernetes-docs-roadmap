@@ -1,0 +1,10 @@
+id: controllers
+title:
+  ko: "컨트롤러"
+  en: "Controllers"
+url: https://kubernetes.io/docs/concepts/architecture/controller/
+section: extending
+spine: true
+requires:
+  - workloads
+tags: [platform]

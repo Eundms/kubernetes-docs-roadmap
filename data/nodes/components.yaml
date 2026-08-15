@@ -1,0 +1,9 @@
+id: components
+title:
+  ko: "쿠버네티스 컴포넌트"
+  en: "Kubernetes Components"
+url: https://kubernetes.io/docs/concepts/overview/components/
+section: foundation
+requires:
+  - cluster-architecture
+tags: [core]

@@ -1,0 +1,9 @@
+id: admission-controllers
+title:
+  ko: "어드미션 컨트롤러"
+  en: "Admission Controllers"
+url: https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/
+section: security
+requires:
+  - rbac
+tags: [security]

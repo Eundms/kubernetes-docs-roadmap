@@ -1,0 +1,9 @@
+id: replicaset
+title:
+  ko: "레플리카셋"
+  en: "ReplicaSet"
+url: https://kubernetes.io/docs/concepts/workloads/controllers/replicaset/
+section: workloads
+requires:
+  - workloads
+tags: [core]

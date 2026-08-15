@@ -1,0 +1,10 @@
+id: cluster-networking
+title:
+  ko: "클러스터 네트워킹"
+  en: "Cluster Networking"
+url: https://kubernetes.io/docs/concepts/cluster-administration/networking/
+section: networking
+spine: true
+requires:
+  - pods
+tags: [network]

@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Eundms/kubernetes-docs-roadmap/schema/node.schema.json",
+  "title": "Roadmap Node",
+  "description": "로드맵 노드 하나. data/nodes/<id>.yaml 로 저장한다. 파일명과 id는 반드시 같아야 한다.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "title", "url", "section", "requires"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$",
+      "description": "kebab-case. 파일명과 동일해야 한다. 한 번 정하면 바꾸지 않는다(다른 노드가 참조하므로)."
+    },
+    "title": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ko", "en"],
+      "properties": {
+        "ko": { "type": "string", "minLength": 1, "description": "공식 한글 문서의 제목을 그대로 쓴다. 임의 번역 금지." },
+        "en": { "type": "string", "minLength": 1, "description": "영문 문서 제목 원문." }
+      }
+    },
+    "url": {
+      "type": "string",
+      "format": "uri",
+      "pattern": "^https://kubernetes\\.io/docs/",
+      "description": "영문 정규 URL만 쓴다(/ko/ 아님). 한글 URL과 번역 상태는 빌드 시 자동 주입된다."
+    },
+    "section": {
+      "type": "string",
+      "description": "data/sections.yaml 에 정의된 id 중 하나."
+    },
+    "spine": {
+      "type": "boolean",
+      "default": false,
+      "description": "중앙 축에 놓을 대표 노드인지. 섹션당 1~2개 권장. 나머지는 곁가지로 자동 배치."
+    },
+    "requires": {
+      "type": "array",
+      "items": { "type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$" },
+      "uniqueItems": true,
+      "description": "직접 선수 지식의 id 목록. 간접 선수 지식은 쓰지 않는다(CI가 중복 edge를 거부한다)."
+    },
+    "tags": {
+      "type": "array",
+      "items": { "type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$" },
+      "uniqueItems": true
+    }
+  }
+}

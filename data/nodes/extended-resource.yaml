@@ -1,0 +1,10 @@
+id: extended-resource
+title:
+  ko: "컨테이너에 확장 리소스 지정"
+  en: "Assign Extended Resources to a Container"
+url: https://kubernetes.io/docs/tasks/configure-pod-container/extended-resource/
+section: ai
+requires:
+  - resource-management
+  - scheduling-gpus
+tags: [ai, config]

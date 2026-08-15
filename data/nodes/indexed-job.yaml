@@ -1,0 +1,9 @@
+id: indexed-job
+title:
+  ko: "정적 작업 할당을 통한 병렬 처리를 위한 색인된 잡"
+  en: "Indexed Job for Parallel Processing with Static Work Assignment"
+url: https://kubernetes.io/docs/tasks/job/indexed-parallel-processing-static/
+section: ai
+requires:
+  - job
+tags: [ai, core]

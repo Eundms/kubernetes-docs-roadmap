@@ -1,0 +1,10 @@
+id: volumes
+title:
+  ko: "볼륨"
+  en: "Volumes"
+url: https://kubernetes.io/docs/concepts/storage/volumes/
+section: storage
+spine: true
+requires:
+  - pods
+tags: [storage]

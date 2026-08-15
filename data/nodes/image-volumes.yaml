@@ -1,0 +1,10 @@
+id: image-volumes
+title:
+  ko: "파드에서 이미지 볼륨 사용하기"
+  en: "Use an Image Volume With a Pod"
+url: https://kubernetes.io/docs/tasks/configure-pod-container/image-volumes/
+section: ai
+requires:
+  - images
+  - volumes
+tags: [ai, storage]

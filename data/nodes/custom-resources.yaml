@@ -1,0 +1,10 @@
+id: custom-resources
+title:
+  ko: "커스텀 리소스"
+  en: "Custom Resources"
+url: https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/
+section: extending
+spine: true
+requires:
+  - extend-kubernetes
+tags: [platform, api]

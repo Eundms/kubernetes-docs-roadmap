@@ -1,0 +1,9 @@
+id: podgroup-lifecycle
+title:
+  ko: "파드그룹 라이프사이클"
+  en: "PodGroup Lifecycle"
+url: https://kubernetes.io/docs/concepts/workloads/podgroup-api/lifecycle/
+section: ai
+requires:
+  - podgroup-api
+tags: [ai, api]

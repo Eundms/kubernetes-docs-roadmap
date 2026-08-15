@@ -1,0 +1,9 @@
+id: scheduling-group
+title:
+  ko: "스케줄링 그룹"
+  en: "Scheduling Group"
+url: https://kubernetes.io/docs/concepts/workloads/pods/scheduling-group/
+section: ai
+requires:
+  - podgroup-api
+tags: [ai, scheduling]

@@ -1,0 +1,10 @@
+id: hpa
+title:
+  ko: "호리즌탈 파드 오토스케일링"
+  en: "Horizontal Pod Autoscaling"
+url: https://kubernetes.io/docs/concepts/workloads/autoscaling/horizontal-pod-autoscale/
+section: scheduling
+requires:
+  - deployment
+  - resource-management
+tags: [scheduling]

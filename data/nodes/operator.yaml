@@ -1,0 +1,9 @@
+id: operator
+title:
+  ko: "오퍼레이터 패턴"
+  en: "Operator pattern"
+url: https://kubernetes.io/docs/concepts/extend-kubernetes/operator/
+section: extending
+requires:
+  - custom-resources
+tags: [platform]

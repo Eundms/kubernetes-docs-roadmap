@@ -1,0 +1,9 @@
+id: kubernetes-api
+title:
+  ko: "쿠버네티스 API"
+  en: "The Kubernetes API"
+url: https://kubernetes.io/docs/concepts/overview/kubernetes-api/
+section: foundation
+requires:
+  - components
+tags: [core, api]

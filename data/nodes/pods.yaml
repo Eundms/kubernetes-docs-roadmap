@@ -1,0 +1,10 @@
+id: pods
+title:
+  ko: "파드"
+  en: "Pods"
+url: https://kubernetes.io/docs/concepts/workloads/pods/
+section: workloads
+spine: true
+requires:
+  - containers
+tags: [core]

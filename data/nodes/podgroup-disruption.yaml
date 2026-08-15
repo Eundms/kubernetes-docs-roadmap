@@ -1,0 +1,10 @@
+id: podgroup-disruption
+title:
+  ko: "파드그룹 중단과 우선순위"
+  en: "Pod Group Disruption and Priority"
+url: https://kubernetes.io/docs/concepts/workloads/workload-api/disruption-and-priority/
+section: ai
+requires:
+  - podgroup-api
+  - pod-priority
+tags: [ai, scheduling]

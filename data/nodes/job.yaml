@@ -1,0 +1,9 @@
+id: job
+title:
+  ko: "잡"
+  en: "Jobs"
+url: https://kubernetes.io/docs/concepts/workloads/controllers/job/
+section: workloads
+requires:
+  - workloads
+tags: [core]

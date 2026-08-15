@@ -1,0 +1,10 @@
+id: memory-manager
+title:
+  ko: "노드의 메모리 관리 정책 제어"
+  en: "Control Memory Management Policies on a Node"
+url: https://kubernetes.io/docs/tasks/administer-cluster/memory-manager/
+section: ai
+requires:
+  - resource-managers
+  - pod-qos
+tags: [ai, config]

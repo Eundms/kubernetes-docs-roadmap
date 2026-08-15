@@ -1,0 +1,9 @@
+id: storage-classes
+title:
+  ko: "스토리지 클래스"
+  en: "Storage Classes"
+url: https://kubernetes.io/docs/concepts/storage/storage-classes/
+section: storage
+requires:
+  - persistent-volumes
+tags: [storage]

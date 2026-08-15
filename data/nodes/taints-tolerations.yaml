@@ -1,0 +1,9 @@
+id: taints-tolerations
+title:
+  ko: "테인트와 톨러레이션"
+  en: "Taints and Tolerations"
+url: https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/
+section: scheduling
+requires:
+  - kube-scheduler
+tags: [scheduling]
