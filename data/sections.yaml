@@ -26,6 +26,16 @@
   lede: 파드가 사라져도 남는 데이터. 요청과 공급의 분리가 핵심이다.
   accent: "#0D9488"
 
+- id: monitoring
+  title: { ko: 모니터링·관측, en: Monitoring & Observability }
+  lede: 클러스터 안에서 무슨 일이 일어나는지 보는 방법. 메트릭, 로그, 추적 세 갈래다. 오토스케일링도 이 숫자를 보고 판단한다.
+  accent: "#A21CAF"
+
+- id: debugging
+  title: { ko: 디버깅, en: Troubleshooting }
+  lede: 뭔가 잘못됐을 때 어디부터 보는가. 앱이 문제인지 클러스터가 문제인지 가르는 것이 첫 갈림길이다.
+  accent: "#475569"
+
 - id: scheduling
   title: { ko: 스케줄링, en: Scheduling }
   lede: 파드가 어느 노드에 배치되는가, 그리고 자원이 모자랄 때 누가 밀려나는가.

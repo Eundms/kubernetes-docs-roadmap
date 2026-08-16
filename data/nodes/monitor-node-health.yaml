@@ -1,0 +1,11 @@
+id: monitor-node-health
+title:
+  ko: "노드 헬스 모니터링하기"
+  en: "Monitor Node Health"
+url: https://kubernetes.io/docs/tasks/debug/debug-cluster/monitor-node-health/
+section: monitoring
+requires:
+  - observability
+  - nodes
+  - daemonset
+tags: [monitoring]

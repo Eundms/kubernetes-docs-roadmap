@@ -1,0 +1,10 @@
+id: audit
+title:
+  ko: "감사(auditing)"
+  en: "Auditing"
+url: https://kubernetes.io/docs/tasks/debug/debug-cluster/audit/
+section: security
+requires:
+  - observability
+  - rbac
+tags: [security, monitoring]

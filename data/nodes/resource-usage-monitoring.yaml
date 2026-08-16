@@ -1,0 +1,9 @@
+id: resource-usage-monitoring
+title:
+  ko: "리소스 모니터링 도구"
+  en: "Tools for Monitoring Resources"
+url: https://kubernetes.io/docs/tasks/debug/debug-cluster/resource-usage-monitoring/
+section: monitoring
+requires:
+  - resource-metrics-pipeline
+tags: [monitoring]

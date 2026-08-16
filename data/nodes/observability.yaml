@@ -1,0 +1,10 @@
+id: observability
+title:
+  ko: "관측 가능성"
+  en: "Observability"
+url: https://kubernetes.io/docs/concepts/cluster-administration/observability/
+section: monitoring
+spine: true
+requires:
+  - components
+tags: [monitoring]

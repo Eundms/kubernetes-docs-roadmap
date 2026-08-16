@@ -1,0 +1,10 @@
+id: kube-state-metrics
+title:
+  ko: "쿠버네티스 오브젝트 상태에 대한 메트릭"
+  en: "Metrics for Kubernetes Object States"
+url: https://kubernetes.io/docs/concepts/cluster-administration/kube-state-metrics/
+section: monitoring
+requires:
+  - observability
+  - objects
+tags: [monitoring]

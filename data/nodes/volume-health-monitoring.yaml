@@ -1,0 +1,10 @@
+id: volume-health-monitoring
+title:
+  ko: "볼륨 헬스 모니터링"
+  en: "Volume Health Monitoring"
+url: https://kubernetes.io/docs/concepts/storage/volume-health-monitoring/
+section: monitoring
+requires:
+  - observability
+  - persistent-volumes
+tags: [monitoring, storage]
