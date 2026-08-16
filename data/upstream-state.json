@@ -1,0 +1,6 @@
+{
+  "version": "v1.36",
+  "commit": "fa7f453b4f",
+  "processedAt": "2026-08-16",
+  "note": "watch-upstream.ts 가 이 값과 upstream 의 hugo.toml latest 를 비교한다. 봇 PR 이 갱신한다."
+}

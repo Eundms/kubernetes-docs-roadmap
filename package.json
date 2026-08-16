@@ -6,11 +6,14 @@
     "validate": "tsx scripts/validate.ts",
     "validate:print": "tsx scripts/validate.ts --print",
     "l10n": "tsx scripts/fetch-l10n.ts",
+    "watch:upstream": "tsx scripts/watch-upstream.ts",
+    "propose": "tsx scripts/propose-nodes.ts",
     "build": "npm run validate && tsx scripts/build.ts",
     "check:links": "tsx scripts/check-links.ts",
     "serve": "python3 -m http.server 8000 --directory dist"
   },
   "devDependencies": {
+    "@anthropic-ai/sdk": "^0.117.1",
     "ajv": "^8.17.1",
     "ajv-formats": "^3.0.1",
     "tsx": "^4.19.2",

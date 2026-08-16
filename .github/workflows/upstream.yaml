@@ -1,0 +1,90 @@
+name: Upstream release
+
+# 쿠버네티스 릴리스마다 새 문서를 노드 초안으로 만들어 PR 을 연다.
+#
+# upstream 저장소에는 webhook 을 걸 수 없으므로 월 1회 깨어나 확인만 한다.
+# 릴리스가 없으면 watch-upstream.ts 가 즉시 끝나므로 이 경로는 비용이 0 이다
+# (LLM 호출 없음, 클론은 캐시 재사용).
+#
+# 릴리스 감지 신호는 upstream hugo.toml 의 `latest = "vX.Y"` 한 줄이다.
+# 문서는 릴리스 당일이 아니라 그 다음 사이클 내내 들어오므로, 릴리스 시점에
+# 걷으면 직전 사이클 문서를 안정된 상태로 한 번에 보게 된다.
+# 자동 실행은 잠시 꺼 두었다. LLM 공급자를 확정한 뒤 아래 schedule 을 다시 켠다.
+# 그때까지는 Actions 탭에서 수동으로만 돌릴 수 있다.
+on:
+  # schedule:
+  #   - cron: "0 4 1 * *"
+  workflow_dispatch:
+    inputs:
+      since:
+        description: "이 커밋 이후를 강제로 재검토 (비우면 상태 파일 기준)"
+        required: false
+        type: string
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: upstream-proposal
+  cancel-in-progress: false
+
+jobs:
+  propose:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: "22", cache: npm }
+      - run: npm ci
+
+      - uses: actions/cache@v4
+        with:
+          path: .cache/website
+          key: website-${{ github.run_id }}
+          restore-keys: website-
+
+      - name: 릴리스 확인 및 신규 문서 수집
+        id: watch
+        run: |
+          rm -f data/generated/.skip
+          npx tsx scripts/watch-upstream.ts ${{ inputs.since && format('--since {0}', inputs.since) || '' }} --print
+          if [ -f data/generated/.skip ]; then
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+          else
+            count=$(node -e "console.log(require('./data/generated/upstream-new.json').docs.length)")
+            echo "count=$count" >> "$GITHUB_OUTPUT"
+            [ "$count" -eq 0 ] && echo "skip=true" >> "$GITHUB_OUTPUT" || true
+          fi
+
+      # 여기부터가 유료 구간이다. 위에서 걸러졌으면 실행되지 않는다.
+      - name: 노드 초안 생성
+        if: steps.watch.outputs.skip != 'true'
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: npx tsx scripts/propose-nodes.ts
+
+      - name: PR 열기
+        if: steps.watch.outputs.skip != 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          version=$(node -e "console.log(require('./data/upstream-state.json').version)")
+          branch="upstream/$version"
+
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -b "$branch"
+          git add data/nodes data/upstream-state.json
+          git commit -m "upstream $version 신규 문서 노드 초안"
+          git push -f origin "$branch"
+
+          # 같은 브랜치로 이미 열린 PR 이 있으면 본문만 갱신한다.
+          existing=$(gh pr list --head "$branch" --state open --json number --jq '.[0].number')
+          if [ -n "$existing" ]; then
+            gh pr edit "$existing" --body-file data/generated/proposal.md
+          else
+            gh pr create --head "$branch" --base main \
+              --title "upstream $version 신규 문서 반영 (제안)" \
+              --body-file data/generated/proposal.md
+          fi
