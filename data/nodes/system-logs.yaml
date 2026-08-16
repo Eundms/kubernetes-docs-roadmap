@@ -1,0 +1,9 @@
+id: system-logs
+title:
+  ko: "시스템 로그"
+  en: "System Logs"
+url: https://kubernetes.io/docs/concepts/cluster-administration/system-logs/
+section: monitoring
+requires:
+  - logging
+tags: [monitoring]

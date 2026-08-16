@@ -1,0 +1,9 @@
+id: debug-statefulset
+title:
+  ko: "스테이트풀셋 디버깅하기"
+  en: "Debug a StatefulSet"
+url: https://kubernetes.io/docs/tasks/debug/debug-application/debug-statefulset/
+section: debugging
+requires:
+  - statefulset
+tags: [debug]

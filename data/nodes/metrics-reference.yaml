@@ -1,0 +1,9 @@
+id: metrics-reference
+title:
+  ko: "쿠버네티스 메트릭 레퍼런스"
+  en: "Kubernetes Metrics Reference"
+url: https://kubernetes.io/docs/reference/instrumentation/metrics/
+section: monitoring
+requires:
+  - system-metrics
+tags: [monitoring, api]

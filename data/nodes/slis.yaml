@@ -1,0 +1,9 @@
+id: slis
+title:
+  ko: "쿠버네티스 컴포넌트 SLI 메트릭"
+  en: "Kubernetes Component SLI Metrics"
+url: https://kubernetes.io/docs/reference/instrumentation/slis/
+section: monitoring
+requires:
+  - system-metrics
+tags: [monitoring]

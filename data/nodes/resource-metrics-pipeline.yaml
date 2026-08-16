@@ -1,0 +1,11 @@
+id: resource-metrics-pipeline
+title:
+  ko: "리소스 메트릭 파이프라인"
+  en: "Resource metrics pipeline"
+url: https://kubernetes.io/docs/tasks/debug/debug-cluster/resource-metrics-pipeline/
+section: monitoring
+spine: true
+requires:
+  - observability
+  - resource-management
+tags: [monitoring]

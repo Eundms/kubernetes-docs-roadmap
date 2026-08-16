@@ -1,0 +1,9 @@
+id: system-metrics
+title:
+  ko: "쿠버네티스 시스템 컴포넌트에 대한 메트릭"
+  en: "Metrics For Kubernetes System Components"
+url: https://kubernetes.io/docs/concepts/cluster-administration/system-metrics/
+section: monitoring
+requires:
+  - observability
+tags: [monitoring]

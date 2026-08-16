@@ -1,0 +1,9 @@
+id: psi-metrics
+title:
+  ko: "PSI 메트릭 이해하기"
+  en: "Understand Pressure Stall Information (PSI) Metrics"
+url: https://kubernetes.io/docs/reference/instrumentation/understand-psi-metrics/
+section: monitoring
+requires:
+  - node-metrics
+tags: [monitoring]

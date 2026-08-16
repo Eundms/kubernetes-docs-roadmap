@@ -1,0 +1,9 @@
+id: debug-init-containers
+title:
+  ko: "초기화 컨테이너(Init Containers) 디버그하기"
+  en: "Debug Init Containers"
+url: https://kubernetes.io/docs/tasks/debug/debug-application/debug-init-containers/
+section: debugging
+requires:
+  - init-containers
+tags: [debug]

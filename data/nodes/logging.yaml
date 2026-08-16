@@ -1,0 +1,10 @@
+id: logging
+title:
+  ko: "로깅 아키텍처"
+  en: "Logging Architecture"
+url: https://kubernetes.io/docs/concepts/cluster-administration/logging/
+section: monitoring
+requires:
+  - observability
+  - pod-lifecycle
+tags: [monitoring]

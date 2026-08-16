@@ -1,0 +1,10 @@
+id: node-metrics
+title:
+  ko: "노드 메트릭 데이터"
+  en: "Node metrics data"
+url: https://kubernetes.io/docs/reference/instrumentation/node-metrics/
+section: monitoring
+requires:
+  - resource-metrics-pipeline
+  - nodes
+tags: [monitoring]

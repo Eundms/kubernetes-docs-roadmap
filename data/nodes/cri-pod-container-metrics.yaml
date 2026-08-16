@@ -1,0 +1,9 @@
+id: cri-pod-container-metrics
+title:
+  ko: "CRI 파드 및 컨테이너 메트릭"
+  en: "CRI Pod & Container Metrics"
+url: https://kubernetes.io/docs/reference/instrumentation/cri-pod-container-metrics/
+section: monitoring
+requires:
+  - node-metrics
+tags: [monitoring]

@@ -1,0 +1,9 @@
+id: determine-reason-pod-failure
+title:
+  ko: "파드 실패의 원인 검증하기"
+  en: "Determine the Reason for Pod Failure"
+url: https://kubernetes.io/docs/tasks/debug/debug-application/determine-reason-pod-failure/
+section: debugging
+requires:
+  - logging
+tags: [debug]

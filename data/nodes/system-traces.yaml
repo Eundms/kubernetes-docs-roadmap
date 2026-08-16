@@ -1,0 +1,10 @@
+id: system-traces
+title:
+  ko: "쿠버네티스 시스템 컴포넌트에 대한 추적(trace)"
+  en: "Traces For Kubernetes System Components"
+url: https://kubernetes.io/docs/concepts/cluster-administration/system-traces/
+section: monitoring
+requires:
+  - observability
+  - kubernetes-api
+tags: [monitoring]

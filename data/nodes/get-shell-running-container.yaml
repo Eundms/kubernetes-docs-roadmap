@@ -1,0 +1,9 @@
+id: get-shell-running-container
+title:
+  ko: "동작중인 컨테이너의 셸에 접근하기"
+  en: "Get a Shell to a Running Container"
+url: https://kubernetes.io/docs/tasks/debug/debug-application/get-shell-running-container/
+section: debugging
+requires:
+  - pods
+tags: [debug]
