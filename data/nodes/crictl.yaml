@@ -1,0 +1,9 @@
+id: crictl
+title:
+  ko: "crictl로 쿠버네티스 노드 디버깅하기"
+  en: "Debugging Kubernetes nodes with crictl"
+url: https://kubernetes.io/docs/tasks/debug/debug-cluster/crictl/
+section: debugging
+requires:
+  - debug-cluster
+tags: [debug]

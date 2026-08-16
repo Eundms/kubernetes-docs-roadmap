@@ -1,0 +1,11 @@
+id: debug-cluster
+title:
+  ko: "클러스터 트러블슈팅"
+  en: "Troubleshooting Clusters"
+url: https://kubernetes.io/docs/tasks/debug/debug-cluster/
+section: debugging
+spine: true
+requires:
+  - debug-pods
+  - nodes
+tags: [debug]

@@ -1,0 +1,9 @@
+id: troubleshoot-kubectl
+title:
+  ko: "kubectl 트러블슈팅"
+  en: "Troubleshooting kubectl"
+url: https://kubernetes.io/docs/tasks/debug/debug-cluster/troubleshoot-kubectl/
+section: debugging
+requires:
+  - kubernetes-api
+tags: [debug]

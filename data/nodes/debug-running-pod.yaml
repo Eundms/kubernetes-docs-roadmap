@@ -1,0 +1,9 @@
+id: debug-running-pod
+title:
+  ko: "동작 중인 파드 디버그"
+  en: "Debug Running Pods"
+url: https://kubernetes.io/docs/tasks/debug/debug-application/debug-running-pod/
+section: debugging
+requires:
+  - debug-pods
+tags: [debug]

@@ -1,0 +1,10 @@
+id: debug-service
+title:
+  ko: "서비스 디버깅하기"
+  en: "Debug Services"
+url: https://kubernetes.io/docs/tasks/debug/debug-application/debug-service/
+section: debugging
+requires:
+  - dns
+  - network-policies
+tags: [debug, network]

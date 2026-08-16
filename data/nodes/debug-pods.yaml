@@ -1,0 +1,11 @@
+id: debug-pods
+title:
+  ko: "파드 디버깅하기"
+  en: "Debug Pods"
+url: https://kubernetes.io/docs/tasks/debug/debug-application/debug-pods/
+section: debugging
+spine: true
+requires:
+  - logging
+  - resource-management
+tags: [debug]

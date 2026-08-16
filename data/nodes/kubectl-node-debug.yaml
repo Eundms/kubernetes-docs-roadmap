@@ -1,0 +1,9 @@
+id: kubectl-node-debug
+title:
+  ko: "kubectl로 쿠버네티스 노드 디버깅하기"
+  en: "Debugging Kubernetes Nodes With Kubectl"
+url: https://kubernetes.io/docs/tasks/debug/debug-cluster/kubectl-node-debug/
+section: debugging
+requires:
+  - debug-cluster
+tags: [debug]
